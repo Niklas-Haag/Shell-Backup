@@ -1,4 +1,4 @@
-# Shell-Backup
+# Shell-Backup-Script
 
 
 <h2>Ein einfaches CLI-Programm, um ein Backup zu erstellen</h2>
