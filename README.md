@@ -1,1 +1,21 @@
 # Shell-Backup
+
+
+<h2>Ein einfaches CLI-Programm, um ein Backup zu erstellen</h2>
+
+Wenn man das Backup Skript startet, bekommt man ein kleines Auswahl Menü. Dort gibt es vier Möglichkeiten:
+
+- Backup erstellen
+- Backup laden
+- Alle Backups auflisten
+- Exit
+
+<hr>
+
+<h3>Backup erstellen</h3>
+
+- Um ein Backup zu erstellen wählen sie den ersten Menüpunkt aus.
+- Dort muss man den Ordner auswählen, welchen man sichern möchten.
+- Dann muss man die Komprimierungs
+
+
