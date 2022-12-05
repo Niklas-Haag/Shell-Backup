@@ -94,7 +94,7 @@ function listbackup(){
 }
 
 function deletebackup(){
-	FILE=find /$WHERE2FIND -name *.{$WHAT2FIND} 
+	FILE=find /${WHERE2FIND} -name *.${WHAT2FIND} 
 	clear
 	echo "|-----------------------------------------|"
 	echo "|Backup löschen				|"
@@ -104,10 +104,12 @@ function deletebackup(){
 	read -p "|Eingabe: " WHERE2FIND
 	
 	echo "|-----------------------------------------|"
+	echo "|Backup löschen				|"
+	echo "|-----------------------------------------|"
 	echo "|Nach welchen Dateien soll gesucht werden |"
 	read -p "|Eingabe: " WHAT2FIND
 	
-	echo FILE
+	echo find /${WHERE2FIND} -name *.${WHAT2FIND} 
 }
 
 # Hauptereignisschleife
