@@ -94,7 +94,20 @@ function listbackup(){
 }
 
 function deletebackup(){
-	echo "DELETEBACKUP"
+	FILE=find /$WHERE2FIND -name *.{$WHAT2FIND} 
+	clear
+	echo "|-----------------------------------------|"
+	echo "|Backup löschen				|"
+	echo "|-----------------------------------------|"
+	echo "|In welchem Ordner soll das Backup gesucht|"
+	echo "|werden?                                  |"
+	read -p "|Eingabe: " WHERE2FIND
+	
+	echo "|-----------------------------------------|"
+	echo "|Nach welchen Dateien soll gesucht werden |"
+	read -p "|Eingabe: " WHAT2FIND
+	
+	echo FILE
 }
 
 # Hauptereignisschleife
