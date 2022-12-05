@@ -12,6 +12,7 @@ Wenn man das Backup Skript startet, bekommt man ein kleines Auswahl Menü. Dort 
 
 <hr>
 
+<h2>Optionen</h2>
 <h3>Backup erstellen</h3>
 
 - Um ein Backup zu erstellen wählen sie den ersten Menüpunkt aus.
