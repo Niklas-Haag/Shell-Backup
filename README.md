@@ -16,6 +16,7 @@ Wenn man das Backup Skript startet, bekommt man ein kleines Auswahl Menü. Dort 
 
 - Um ein Backup zu erstellen wählen sie den ersten Menüpunkt aus.
 - Dort muss man den Ordner auswählen, welchen man sichern möchten.
-- Dann muss man die Komprimierungs
+- Dann muss man die Komprimierungsart auswählen
+- Zuletzt muss man noch den Ordner angeben, in dem man die Sicherung speichern möchte
 
 
