@@ -6,8 +6,9 @@
 Wenn man das Backup Skript startet, bekommt man ein kleines Auswahl Menü. Dort gibt es vier Möglichkeiten:
 
 - Backup erstellen
-- Backup laden
-- Alle Backups auflisten
+- Backup auflisten
+- Backups zurückspielen
+- Backup löschen
 - Exit
 
 <hr>
