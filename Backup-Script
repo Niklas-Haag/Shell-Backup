@@ -65,8 +65,18 @@ function what2find(){
 	echo "|------------------------------------------------------------------------------------------|"
 	echo "| Backup löschen	                                                                         |"
 	echo "|------------------------------------------------------------------------------------------|"
-	echo "| Nach welchen Dateien soll gesucht werden                                                 |"
+	echo "| Nach welchen Dateien soll gesucht werden (korrekte Dateiendung                           |"
 	read -p "| Eingabe: " WHAT2FIND
+}
+
+function what2delete(){
+	echo "|------------------------------------------------------------------------------------------|"
+	echo "| Backup löschen	                                                                         |"
+	echo "|------------------------------------------------------------------------------------------|"
+	echo "| Welches Backup soll gelöscht werden                                                      |"
+	read -p "| Eingabe: " WHAT2DELETE
+	
+	echo rm /$WHERE2FIND/WHAT2DELETE
 }
 
 function backup(){
@@ -135,6 +145,16 @@ function deletebackup(){
 	done
 	
 	echo "find /${WHERE2FIND} -name *.${WHAT2FIND}" 
+	
+	YESNO=0
+	until [ $YESNO = 1 ]
+	do
+		what2delete
+		echo "|-----------------------------------------------------------------------------------|"		
+		echo "| Sind sie sicher, dass Sie dieses Backup löschen wollen §{WHAT2DELETE}             |"
+		read -p "| (0: nein | 1: ja) " YESNO
+	done
+	
 }
 
 # Hauptereignisschleife
