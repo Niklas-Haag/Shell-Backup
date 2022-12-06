@@ -51,6 +51,23 @@ function what2Backup(){
 	read -p "| Eingabe: " WHAT2BACKUP 
 }
 
+function where2find(){
+		clear
+		echo "|------------------------------------------|"
+		echo "| Backup löschen	                         |"
+		echo "|------------------------------------------|"
+		echo "| In welchem Ordner soll das Backup gesucht|"
+		echo "| werden?                                  |"
+		read -p "|Eingabe: " WHERE2FIND
+}
+
+function what2find(){
+	echo "|------------------------------------------------------------------------------------------|"
+	echo "| Backup löschen	                                                                         |"
+	echo "|------------------------------------------------------------------------------------------|"
+	echo "| Nach welchen Dateien soll gesucht werden                                                 |"
+	read -p "| Eingabe: " WHAT2FIND
+}
 
 function backup(){
 	BACKUPFILE=$(date +%Y%m%d-%H%M%S)-backup.tgz
@@ -58,8 +75,9 @@ function backup(){
 	until [ $YESNO = 1 ]
 	do
 		compress
-		echo "| Sind Sie sicher das Sie die Option ${COMPRESS}         |" 
-		echo "| benutzen möchten?                                      |"
+		echo "|-----------------------------------------------------------------------------------|"	
+		echo "| Sind Sie sicher das Sie die Option ${COMPRESS}                                    |" 
+		echo "| benutzen möchten?                                                                 |"
 		read -p "| (0: nein | 1: ja) " YESNO
 	done
 	# 
@@ -67,17 +85,19 @@ function backup(){
 	until [ $YESNO = 1 ]
 	do
 		where2Backup
-		echo "| Sind Sie sicher das Sie hier in speichern möchten: ${WHERE2BACKUP}         |" 
-		echo "| benutzen möchten?                               			   |"
+		echo "|-----------------------------------------------------------------------------------|"
+		echo "| Sind Sie sicher das Sie hier in speichern möchten: ${WHERE2BACKUP}                |" 
+		echo "| benutzen möchten?                               			          |"
 		read -p "| (0: nein | 1: ja) " YESNO
 	done
 	#
 	YESNO=0
 	until [ $YESNO = 1 ]
 	do
-		what2Backup	
+		what2Backup
+		echo "|-----------------------------------------------------------------------------------|"
 		echo "| Sind Sie sicher das Sie dieses Verzeichnis sichern wollen? ${WHAT2BACKUP}         |" 
-		echo "| benutzen möchten?                            |"
+		echo "| benutzen möchten?                                                                 |"
 		read -p "| (0: nein | 1: ja) " YESNO
 	done
 		
@@ -94,22 +114,27 @@ function listbackup(){
 }
 
 function deletebackup(){
-	FILE=find /${WHERE2FIND} -name *.${WHAT2FIND} 
-	clear
-	echo "|-----------------------------------------|"
-	echo "|Backup löschen				|"
-	echo "|-----------------------------------------|"
-	echo "|In welchem Ordner soll das Backup gesucht|"
-	echo "|werden?                                  |"
-	read -p "|Eingabe: " WHERE2FIND
+	YESNO=0
+	until [ $YESNO = 1 ]
+	do
+		where2find
+		echo "|-----------------------------------------------------------------------------------|"
+		echo "| Sind Sie sicher das Sie in diesem Verzeichnis suchen wollen? ${WHERE2FIND}        |" 
+		echo "| benutzen möchten?                                                                 |"
+		read -p "| (0: nein | 1: ja) " YESNO
+	done
 	
-	echo "|-----------------------------------------|"
-	echo "|Backup löschen				|"
-	echo "|-----------------------------------------|"
-	echo "|Nach welchen Dateien soll gesucht werden |"
-	read -p "|Eingabe: " WHAT2FIND
+	YESNO=0
+	until [ $YESNO = 1 ]
+	do
+		what2find
+		echo "|-----------------------------------------------------------------------------------|"
+		echo "| Sind Sie sicher das Sie nach diesen Dateien suchen wollen? ${WHAT2FIND}           |" 
+		echo "| benutzen möchten?                                                                 |"
+		read -p "| (0: nein | 1: ja) " YESNO
+	done
 	
-	echo find /${WHERE2FIND} -name *.${WHAT2FIND} 
+	echo "find /${WHERE2FIND} -name *.${WHAT2FIND}" 
 }
 
 # Hauptereignisschleife
