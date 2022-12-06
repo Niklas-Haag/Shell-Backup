@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Backupscript: Erstellen und Zurückspielen von Verzeichnissen
+# Backupscript: Erstellen und Zurückspielen von Backup Verzeichnissen
 # Author : Niklas Haag
 # E-Mail : haagni@elektronikschule.de
 # Version: v1.0
